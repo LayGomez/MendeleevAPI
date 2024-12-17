@@ -35,16 +35,16 @@ public class Element {
     private String discoveredBy;
 
     @ManyToOne
-    @JoinColumn(name = "group")
-    private Group group;
+    @JoinColumn(name = "elementGroup")
+    private ElementGroup elementGroup;
 
 
-    public Element(String name, int atomicNumber, String symbol, String discoveredBy, LocalDate discoveryDate, Group group) {
+    public Element(String name, int atomicNumber, String symbol, String discoveredBy, LocalDate discoveryDate, ElementGroup elementGroup) {
         this.name = name;
         this.atomicNumber = atomicNumber;
         this.symbol = symbol;
         this.discoveredBy = discoveredBy;
         this.discoveryDate = discoveryDate;
-        this.group = group;
+        this.elementGroup = elementGroup;
     }
 }
