@@ -17,7 +17,11 @@ import java.util.List;
 @AllArgsConstructor
 public class ElementGroup {
     @Id
-    @Column(nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_group", nullable = false)
+    private Long id;
+
+    @Column(name = "groupNumber")
     private int groupNumber;
 
     @Column(name = "name")

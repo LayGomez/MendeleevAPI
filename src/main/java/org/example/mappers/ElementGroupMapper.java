@@ -12,6 +12,7 @@ public class ElementGroupMapper {
     }
     public static ElementGroupResponse toResponse(ElementGroup elementGroup){
         return new ElementGroupResponse(
+                elementGroup.getId(),
                 elementGroup.getGroupNumber(),
                 elementGroup.getName(),
                 elementGroup.getDescription());
