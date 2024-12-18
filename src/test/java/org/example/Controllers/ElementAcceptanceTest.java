@@ -142,7 +142,7 @@ public class ElementAcceptanceTest {
     }
 
     @Test
-    void givenPatientById_whenDelete_theReturnSuccess() throws Exception {
+    void givenElementById_whenDelete_theReturnSuccess() throws Exception {
 
 
         mockMvc.perform(delete("/elements/1")
@@ -152,7 +152,7 @@ public class ElementAcceptanceTest {
     }
 
     @Test
-    void givenPatientById_whenUpdate_thenReturnSuccess() throws Exception {
+    void givenElementById_whenUpdate_thenReturnSuccess() throws Exception {
 
         String jsonrequest =
                 """
