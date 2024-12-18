@@ -1,10 +1,8 @@
 package org.example.controllers;
 
-import org.apache.coyote.Response;
 import org.example.Services.ElementServices;
 import org.example.dtos.ElementRequest;
 import org.example.dtos.ElementResponse;
-import org.example.repositories.ElementRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

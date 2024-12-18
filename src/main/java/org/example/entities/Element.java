@@ -27,7 +27,7 @@ public class Element {
     @Column(name = "symbol")
     private String symbol;
 
-    @Column(name= "discoveryDate")
+    @Column(name = "DISCOVERY_DATE", columnDefinition = "DATE")
     private LocalDate discoveryDate;
 
     @Column(name = "discoveredBy")
