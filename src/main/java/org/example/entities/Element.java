@@ -12,7 +12,6 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Element {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,7 +38,7 @@ public class Element {
     private ElementGroup elementGroup;
 
 
-    public Element(String name, int atomicNumber, String symbol, String discoveredBy, LocalDate discoveryDate, ElementGroup elementGroup) {
+    public Element(String name, int atomicNumber, String symbol,  LocalDate discoveryDate, String discoveredBy, ElementGroup elementGroup) {
         this.name = name;
         this.atomicNumber = atomicNumber;
         this.symbol = symbol;

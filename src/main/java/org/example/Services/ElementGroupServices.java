@@ -8,7 +8,6 @@ import org.example.mappers.ElementGroupMapper;
 import org.example.repositories.ElementGroupRepository;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,7 +32,7 @@ public class ElementGroupServices {
                 .toList();
     }
 
-    public ElementGroupResponse findGroupByid(Long id){
+    public ElementGroupResponse findGroupById(Long id){
         Optional<ElementGroup> optionalGroup = elementGroupRepository.findById(id);
 
         if (optionalGroup.isEmpty()){

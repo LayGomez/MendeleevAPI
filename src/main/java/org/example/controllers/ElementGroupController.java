@@ -3,8 +3,6 @@ package org.example.controllers;
 import org.example.Services.ElementGroupServices;
 import org.example.dtos.ElementGroupRequest;
 import org.example.dtos.ElementGroupResponse;
-import org.example.entities.ElementGroup;
-import org.example.repositories.ElementGroupRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,12 +13,9 @@ import java.util.List;
 @RequestMapping("/elementGroups")
 public class ElementGroupController {
     private final ElementGroupServices groupServices;
-    private final ElementGroupRepository elementGroupRepository;
 
-    public ElementGroupController(ElementGroupServices groupServices,
-                                  ElementGroupRepository elementGroupRepository) {
+    public ElementGroupController(ElementGroupServices groupServices) {
         this.groupServices = groupServices;
-        this.elementGroupRepository = elementGroupRepository;
     }
 
     @PostMapping
@@ -38,7 +33,7 @@ public class ElementGroupController {
 
     @GetMapping("/{id}")
     public ElementGroupResponse getGroupById (@PathVariable Long id){
-        return groupServices.findGroupByid(id);
+        return groupServices.findGroupById(id);
     }
 
     @PutMapping("/{id}")
