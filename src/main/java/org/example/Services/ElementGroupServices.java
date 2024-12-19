@@ -32,6 +32,14 @@ public class ElementGroupServices {
                 .toList();
     }
 
+    public List<ElementGroupResponse> searchByName(String name) {
+
+        List<ElementGroup> elementGroups = elementGroupRepository.findLikeName(name);
+
+        return elementGroups.stream()
+                .map(group -> ElementGroupMapper.toResponse(group)).toList();
+    }
+
     public ElementGroupResponse findGroupById(Long id){
         Optional<ElementGroup> optionalGroup = elementGroupRepository.findById(id);
 

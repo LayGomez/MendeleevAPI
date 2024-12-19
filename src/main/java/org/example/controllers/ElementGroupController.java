@@ -3,6 +3,7 @@ package org.example.controllers;
 import org.example.Services.ElementGroupServices;
 import org.example.dtos.ElementGroupRequest;
 import org.example.dtos.ElementGroupResponse;
+import org.example.repositories.ElementGroupRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,10 @@ public class ElementGroupController {
     }
 
     @GetMapping
-    public List<ElementGroupResponse> getAllGroups(){
+    public List<ElementGroupResponse> getAllGroups(@RequestParam(name = "name", required = false )String name){
+        if (name != null && !name.isEmpty()){
+            return groupServices.searchByName(name);
+        }
         List<ElementGroupResponse> groupList = groupServices.getAllGroups();
         return groupList;
     }
