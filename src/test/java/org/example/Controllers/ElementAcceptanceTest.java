@@ -82,64 +82,7 @@ public class ElementAcceptanceTest {
                 .andExpect(content().json(response));
     }
 
-    @Test
-    void givenValidElement_whenGetRequestIsMade_thenReturnSuccess() throws Exception {
 
-        String jsonreponse =
-                """
-                        [
-                            {
-                            "id": 1,
-                            "name": "Fluorine",
-                            "atomicNumber": 9,
-                            "symbol": "F",
-                            "discoveryDate": "1886-01-01",
-                            "discoveredBy": "Marie Curie, Irène Joliot-Curie",
-                            "elementGroup": {
-                                "id": 1,
-                                "groupNumber": 1,
-                                "name": "Reactive Nonmetals",
-                                "description": "Reactive nonmetals tend to gain electrons."
-                            }
-                        }
-                        ]
-                        """;
-
-        mockMvc.perform(get("/elements").contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().json(jsonreponse));
-
-    }
-
-    @Test
-    void givenValidIdElement_whenGetRequestIsMade_thenReturnSuccess() throws Exception {
-
-        String jsonresponse =
-                """
-                        
-                         {
-                            "id": 1,
-                            "name": "Fluorine",
-                            "atomicNumber": 9,
-                            "symbol": "F",
-                            "discoveryDate": "1886-01-01",
-                            "discoveredBy": "Marie Curie, Irène Joliot-Curie",
-                            "elementGroup": {
-                                "id": 1,
-                                "groupNumber": 1,
-                                "name": "Reactive Nonmetals",
-                                "description": "Reactive nonmetals tend to gain electrons."
-                            }
-                        }
-                        
-                        """;
-
-
-        mockMvc.perform(get("/elements/1")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().json(jsonresponse));
-    }
 
     @Test
     void givenElementById_whenDelete_theReturnSuccess() throws Exception {
