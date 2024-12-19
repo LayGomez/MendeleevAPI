@@ -4,6 +4,7 @@ org/example/entities/Element.class
 org/example/Services/ElementGroupServices.class
 org/example/mappers/ElementMapper.class
 org/example/Services/ElementServices.class
+org/example/config/InitFakeData.class
 org/example/exceptions/GroupNotFoundException.class
 org/example/mappers/ElementGroupMapper.class
 org/example/controllers/ElementController.class

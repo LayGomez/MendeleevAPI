@@ -7,10 +7,12 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.test.context.ActiveProfiles;
 
+@ActiveProfiles("test")
 public class EndpointTest {
 
-    private static final String BASE_URL = "http://localhost:8080";  // Verifica que este sea el puerto correcto
+    private static final String BASE_URL = "http://localhost:8080";
 
     @Before
     public void setUp() {
@@ -26,15 +28,15 @@ public class EndpointTest {
                 + "}";
 
         given()
-                .contentType(ContentType.JSON)  // Asegúrate de enviar el tipo de contenido correcto
-                .accept(ContentType.JSON)       // Aceptar JSON como respuesta
-                .body(newGroupJson)             // El cuerpo de la solicitud
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .body(newGroupJson)
                 .when()
                 .post("/elementGroups")
                 .then()
-                .statusCode(201)                // Verifica que el código de estado sea 201 (Creado)
-                .body("groupNumber", equalTo(1)) // Verifica el valor de groupNumber
-                .body("name", equalTo("reactive Nonmetals")) // Verifica el nombre
-                .body("description", equalTo("Reactive nonmetals tend to gain electrons.")); // Verifica la descripción
+                .statusCode(201)
+                .body("groupNumber", equalTo(1))
+                .body("name", equalTo("reactive Nonmetals"))
+                .body("description", equalTo("Reactive nonmetals tend to gain electrons."));
     }
 }

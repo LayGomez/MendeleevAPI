@@ -1,5 +1,7 @@
 package org.example.config;
 
+import org.example.dtos.ElementRequest;
+import org.example.entities.Element;
 import org.example.entities.ElementGroup;
 import org.example.repositories.ElementGroupRepository;
 import org.example.repositories.ElementRepository;
@@ -26,40 +28,26 @@ public class InitFakeData {
     public CommandLineRunner initData() {
         return args -> {
             List<ElementGroup> elementGroups = List.of(
-                    new ElementGroup(1, "Reactive Nonmetals", "Reactive nonmetals tend to gain electrons."),
-                    new ElementGroup(1, "Reactive Nonmetals", "Reactive nonmetals tend to gain electrons."),
-
-
-                    );
+                    new ElementGroup(1,
+                            "Alkali Metals",
+                            "The alkali metals are a group of highly reactive metals in the periodic table. They are characterized by having one electron in their outermost shell, making them very electropositive and reactive, especially with water."),
+                    new ElementGroup(2,
+                            "Alkaline Earth Metals",
+                            "The alkaline earth metals are a group of elements in the periodic table that are somewhat reactive, but less so than the alkali metals. They have two electrons in their outermost shell"),
+                    new ElementGroup(3,
+                            "Scandium and Yttrium Group",
+                            "Group 3 of the periodic table consists of elements that are transition metals with three electrons in their outer shell." ));
             List<ElementGroup> savedGroups = elementGroupRepository.saveAll(elementGroups);
 
+            ElementGroup elementGroup1 = savedGroups.get(0);
+            ElementGroup elementGroup2 = savedGroups.get(1);
+            ElementGroup elementGroup3 = savedGroups.get(2);
 
-            Guardian guardian1 = savedGuardians.get(0);
-            Guardian guardian2 = savedGuardians.get(1);
-
-            List<Pet> petList = List.of(
-                    new Pet("Bobby", "gato", "", 5, guardian1),
-                    new Pet("Mike", "gato", "", 3, guardian2));
-            List<Pet> savedPets = petRepository.saveAll(petList);
-
-            Pet pet1 = savedPets.get(0);
-            Pet pet2 = savedPets.get(1);
-
-            List<Appointment> appointmentList = List.of(
-                    new Appointment(
-                            LocalDate.of(2024, 12, 11),
-                            LocalTime.of(10, 25),
-                            "Vaccination",
-                            pet1
-                    ),
-                    new Appointment(
-                            LocalDate.of(2024, 12, 12),
-                            LocalTime.of(11, 0),
-                            "Follow-Up",
-                            pet2
-                    )
-            );
-            appointmentRepository.saveAll(appointmentList);
+            List<Element> elementList = List.of(
+                    new Element("Hydrogen", 1,"H", LocalDate.of(1766, 1, 1),"Henry Cavendish",elementGroup1),
+                    new Element("Beryllium", 4, "Be", LocalDate.of(1798, 01, 01), "Louis-Nicolas Vauquelin", elementGroup2),
+                    new Element("Scandium", 21, "Sc",LocalDate.of(1879, 01, 01), "Lars Fredrik Nilson", elementGroup3 ));
+            elementRepository.saveAll(elementList);
         };
     }
 }

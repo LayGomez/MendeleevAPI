@@ -1,6 +1,7 @@
 /home/lay/Documentos/bootcamp/springboot/MendeleevAPI/src/main/java/org/example/MendeleevApplication.java
 /home/lay/Documentos/bootcamp/springboot/MendeleevAPI/src/main/java/org/example/Services/ElementGroupServices.java
 /home/lay/Documentos/bootcamp/springboot/MendeleevAPI/src/main/java/org/example/Services/ElementServices.java
+/home/lay/Documentos/bootcamp/springboot/MendeleevAPI/src/main/java/org/example/config/InitFakeData.java
 /home/lay/Documentos/bootcamp/springboot/MendeleevAPI/src/main/java/org/example/controllers/ElementController.java
 /home/lay/Documentos/bootcamp/springboot/MendeleevAPI/src/main/java/org/example/controllers/ElementGroupController.java
 /home/lay/Documentos/bootcamp/springboot/MendeleevAPI/src/main/java/org/example/dtos/ElementGroupRequest.java
