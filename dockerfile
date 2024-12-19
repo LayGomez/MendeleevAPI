@@ -1,5 +1,5 @@
 # Usar una imagen base con Java
-FROM openjdk:17-jdk-slim
+FROM amazoncorretto:21-alpine-jdk
 
 # Crear un directorio para la aplicación
 WORKDIR /app
